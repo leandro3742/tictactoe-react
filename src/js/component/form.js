@@ -18,7 +18,7 @@ export default function Form() {
 	};
 
 	return (
-		<div>
+		<div className="mt-5 bg-dark d-flex justify-content-center">
 			<div style={mostrar}>
 				<form>
 					<input
@@ -37,13 +37,13 @@ export default function Form() {
 						id="secondPlayer"
 					/>
 				</form>
-
-				<button
-					onClick={start}
-					className="botonForm mt-3 btn btn-primary">
-					Start
-				</button>
-
+				<div className="d-flex justify-content-center">
+					<button
+						onClick={start}
+						className="botonForm mt-3 btn btn-primary">
+						Start
+					</button>
+				</div>
 				<div className="d-flex justify-content-center">
 					<div className="m-3 text-warning botonX rounded d-flex justify-content-center align-items-center">
 						X

@@ -5,10 +5,9 @@ import Jugar from "./jugador";
 
 export function Home() {
 	return (
-		// <div className="bg-dark text-center mt-5">
-		<div>
-			{/* <Form /> */}
-			<Jugar />
+		<div className="text-center mt-5">
+			<Form />
+			{/* <Jugar fPlayer="Leandro" sPlayer="Arihana" /> */}
 		</div>
 	);
 }
