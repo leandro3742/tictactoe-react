@@ -18,14 +18,12 @@ for (let i = 0; i < 9; i++) {
 	arreglo_vacio[i] = "";
 }
 export default function Jugar(props) {
-	console.log(props);
+	// console.log(props.fPlayer);
 	let jugadores = props;
-
 	let arreglo_vacio = [];
 	for (let i = 0; i < 9; i++) {
 		arreglo_vacio[i] = "";
 	}
-
 	const [arr, setArr] = useState(arreglo_vacio);
 	const [jugador, setJugador] = useState(true);
 	const [cuadradosOn, setCuadradosOn] = useState(0);
@@ -130,8 +128,11 @@ export default function Jugar(props) {
 		setArr(arreglo_vacio);
 		setTurno("Turno de " + jugadores.fPlayer);
 	};
+	const cambiar_de_componente = () => {
+		jugadores.volver(true);
+	};
 	return (
-		<div className=" text-white mt-5 d-flex flex-column align-items-center">
+		<div className="text-white mt-5 d-flex flex-column align-items-center">
 			<h1>{turno}</h1>
 			<div className="text-success">
 				<h3>{ganador}</h3>
@@ -200,6 +201,11 @@ export default function Jugar(props) {
 			</div>
 			<button className="mt-5 btn btn-primary" onClick={setear_todo}>
 				Play again
+			</button>
+			<button
+				className="mt-2 btn btn-primary"
+				onClick={cambiar_de_componente}>
+				Change players
 			</button>
 		</div>
 	);

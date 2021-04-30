@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Jugar from "./jugador";
+import { volver } from "./jugador";
 
 export default function Form() {
 	const [primerJugador, setPrimerJugador] = useState("");
@@ -14,8 +15,21 @@ export default function Form() {
 	};
 	const start = () => {
 		setMostrar({ display: "none" });
-		setJugar(<Jugar fPlayer={primerJugador} sPlayer={segundoJugador} />);
+		setJugar(
+			<Jugar
+				fPlayer={primerJugador}
+				sPlayer={segundoJugador}
+				volver={volver}
+			/>
+		);
 	};
+	function volver(e) {
+		console.log("Llega el mensaje" + e);
+		if (e) {
+			setJugar("");
+			setMostrar({ display: "block" });
+		}
+	}
 
 	return (
 		<div className="mt-5 bg-dark d-flex justify-content-center">
