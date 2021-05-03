@@ -1,24 +1,10 @@
 import React, { useState } from "react";
 
-// const [uno, setUno] = useState("");
-// const [dos, setDos] = useState("");
-// const [tres, setTres] = useState("");
-// const [cuatro, setCuatro] = useState("");
-// const [cinco, setCinco] = useState("");
-// const [seis, setSeis] = useState("");
-// const [siete, setSiete] = useState("");
-// const [ocho, setOcho] = useState("");
-// const [nueve, setNueve] = useState("");
-
-let jugador1 = [];
-let jugador2 = [];
-
 let arreglo_vacio = [];
 for (let i = 0; i < 9; i++) {
 	arreglo_vacio[i] = "";
 }
 export default function Jugar(props) {
-	// console.log(props.fPlayer);
 	let jugadores = props;
 	let arreglo_vacio = [];
 	for (let i = 0; i < 9; i++) {
@@ -119,7 +105,6 @@ export default function Jugar(props) {
 					: setGanador(jugadores.sPlayer + " Wins!!");
 				setTurno("");
 			}
-			console.log("j1: " + jugador1);
 		}
 	};
 	const setear_todo = () => {
@@ -132,7 +117,7 @@ export default function Jugar(props) {
 		jugadores.volver(true);
 	};
 	return (
-		<div className="text-white mt-5 d-flex flex-column align-items-center">
+		<div className="text-white d-flex flex-column align-items-center">
 			<h1>{turno}</h1>
 			<div className="text-success">
 				<h3>{ganador}</h3>

@@ -32,43 +32,46 @@ export default function Form() {
 	}
 
 	return (
-		<div className="mt-5 bg-dark d-flex justify-content-center">
-			<div style={mostrar}>
-				<form>
-					<input
-						value={primerJugador}
-						onChange={fPlayer}
-						className="m-2"
-						type="text"
-						placeholder="first player"
-						id="firstPlayer"
-					/>
-					<input
-						value={segundoJugador}
-						onChange={sPlayer}
-						type="text"
-						placeholder="second player"
-						id="secondPlayer"
-					/>
-				</form>
-				<div className="d-flex justify-content-center">
-					<button
-						onClick={start}
-						className="botonForm mt-3 btn btn-primary">
-						Start
-					</button>
-				</div>
-				<div className="d-flex justify-content-center">
-					<div className="m-3 text-warning botonX rounded d-flex justify-content-center align-items-center">
-						X
+		<div className="d-flex justify-content-center">
+			<div className=" p-5 col-8 rounded bg-dark d-flex justify-content-center">
+				<div className="col-8 rounded bg-secondary p-5 ">
+					<div style={mostrar}>
+						<form>
+							<input
+								value={primerJugador}
+								onChange={fPlayer}
+								className="m-2"
+								type="text"
+								placeholder="first player"
+								id="firstPlayer"
+							/>
+							<input
+								value={segundoJugador}
+								onChange={sPlayer}
+								type="text"
+								placeholder="second player"
+								id="secondPlayer"
+							/>
+						</form>
+						<div className="d-flex justify-content-center">
+							<button
+								onClick={start}
+								className="botonForm mt-3 btn btn-primary">
+								Start
+							</button>
+						</div>
+						<div className="d-flex justify-content-around">
+							<div className="m-3 text-warning botonX rounded d-flex justify-content-center align-items-center">
+								X
+							</div>
+							<div className="m-3 text-primary botonX rounded d-flex justify-content-center align-items-center">
+								O
+							</div>
+						</div>
 					</div>
-					<div className="m-3 text-primary botonX rounded d-flex justify-content-center align-items-center">
-						O
-					</div>
+					<div>{jugar}</div>
 				</div>
 			</div>
-
-			<div>{jugar}</div>
 		</div>
 	);
 }
